@@ -17,7 +17,7 @@
                         <h5 class="card-title">{{ publisher.name }}</h5>
                         <p class="card-text"><small class="text-muted">Text: </small>
                         </p>
-                        <p class="card-text">Show more details...</p>
+                        <a href="{% url 'publisher_detail' publisher.id %}">Show more details...</a>
                     </div>
                 </div>
             </div>

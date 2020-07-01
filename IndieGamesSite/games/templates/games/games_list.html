@@ -20,7 +20,7 @@
                         <br><small class="text-muted">Genres: {{ game.release_date }}</small>
                         </p>
                         </p>
-                        <p class="card-text">Show more details...</p>
+                        <a href="{% url 'game_detail' game.id %}">Show more details...</a>
                     </div>
                 </div>
             </div>
