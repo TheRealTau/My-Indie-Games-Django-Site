@@ -1,0 +1,47 @@
+.game_preview_img img {
+    min-height: 150px;
+    max-height: 200px;
+    /* min-width: 150px; */
+    max-width: 100%;
+    object-fit: cover;
+    width: fit-content;
+    height: fit-content;
+}
+
+.card_preview {
+    max-height: 200px;
+    max-width: 400px;
+}
+
+.card_small_preview {
+    max-height: 100px;
+    max-width: 350px;
+}
+
+.card_small_preview img {
+    /* min-width: 150px; */
+    max-height: 100px;
+    max-width: 100px;
+    object-fit: cover;
+    width: fit-content;
+    height: fit-content;
+}
+
+.publisher_detail {
+    min-height: 150px;
+    max-height: 250px;
+    /* min-width: 150px; */
+    /* max-width: 100%; */
+    object-fit: cover;
+    width: fit-content;
+    height: fit-content;
+}
+
+.publisher_detail h1 {
+    text-align: center;
+}
+
+.steam_ico img {
+    max-height: 60px;
+    max-width: 60px;
+}
