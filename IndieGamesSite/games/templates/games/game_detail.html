@@ -2,33 +2,53 @@
 {% load static %}
 
 {% block content %}
-<div class="container pt-5">
-<div class="row row-cols-1 row-cols-md-2">
-{% if game %}
-
-    <div class="col mb-4">
-        <div class="card card_preview">
-            <div class="row">
-                <div class="col-4 col-md-5 game_preview_img">
-                    <img src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
-                </div>
-                <div class="col-8 col-md-7">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ game.title }}</h5>
-                        <p class="card-text"><small class="text-muted">release date: {{ game.release_date }}</small>
-                        <br><small class="text-muted">Publisher: {{ game.release_date }}</small> 
-                        <br><small class="text-muted">Genres: {{ game.release_date }}</small>
-                        </p>
-                        </p>
-                        <p class="card-text">Show more details...</p>
-                    </div>
-                </div>
-            </div>
+  <div class="container pt-5 align-content-center">
+    {% if game %}
+      <div class="row row-cols-1">
+        {% if game.image %}
+          <img class="col col-12 publisher_detail" src="{{ game.image.url }}" class="card-img" alt="...">
+        {% else %}
+          <img class="col col-12 publisher_detail" src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
+        {% endif %}
+        <h1 class="col col-12 pt-3">{{ game.title }}</h1>
+        <h6 class="col col-12">Descripcion del juego</h6>
+        <hr>
+        <h5 class="col col-12">Generos</h5>
+        <h6 class="col col-12">Lista de generos</h6>
+        <div>
+          <a class="steam_ico" href="{{ game.steam_link }}">
+            <img class="ico-home" src="{% static 'core/ico/steam.ico' %}" alt=""></i>
+          </a>
         </div>
-    </div>
-
-{% endif %}
-</div>
-
-</div>
+        <hr>
+        <h5 class="col col-12">Editorial</h5>
+        <div>                  
+          <div class="row row-cols-1 pt-3">
+              <div class="col mb-4">
+                <div class="card card_small_preview">
+                  <div class="row">
+                    <div class="col-4">
+                      {% if game.publiser.image %}
+                        <img class="col col-12 " src="{{ game.publiser.image.url }}" class="card-img" alt="...">
+                      {% else %}
+                        <img class="col col-12 " src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
+                      {% endif %}
+                    </div>
+                    <div class="col-8 col-md-7">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ game.publisher.name }}</h5>
+                        <p class="card-text">
+                          <a href="{% url 'publisher_detail' game.publisher.id %}">About this editor</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+                  
+        </div>
+      </div>
+    {% endif %}
+  </div>
 {% endblock %}
