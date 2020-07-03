@@ -63,3 +63,50 @@
     max-height: 60px;
     max-width: 60px;
 }
+
+.index_content h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #333333;
+    font-weight: 400;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+.index_content h5 {
+    text-align: left;
+    font-size: 20px;
+    color: #333333;
+    font-weight: 300;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+.main_color h3 {
+    color: gold;
+}
+
+.section_title h1 {
+    text-align: center;
+}
+
+.pagination_style {
+    display: inline-block;
+  }
+
+.pagination_list a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: large;
+}
+
+.pagination_list a.active {
+    background-color: gray;
+    color: gold;
+  }
+
+  .pagination_list a:hover:not(.active) {background-color: #ddd;}
+
+
+
