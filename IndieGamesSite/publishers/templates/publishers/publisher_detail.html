@@ -2,49 +2,38 @@
 {% load static %}
 
 {% block content %}
-  <div class="container pt-5 align-content-center">
+  <div class="container pt-3 pb-5">
     {% if publisher %}
 
-      <div class="row row-cols-1">
+      <div class="row row-cols-1 content_detail">
         {% if publisher.image %}
-          <img src="{{ publisher.image.url }}" class="card-img" alt="...">
+          <img class="col col-12" src="{{ publisher.image.url }}" alt="...">
         {% else %}
-        <img class="col col-12 publisher_detail" src="{% static 'core/no_image.jpg' %}" alt="">
+          <img class="col col-12" src="{% static 'core/no_image.jpg' %}" alt="">
         {% endif %}
-        
+      
         <h1 class="col col-12 pt-3">{{ publisher.name }}</h1>
         <h6 class="col col-12">Descripcion de la editorial</h6>
         <hr>
-        <div>
-          <h4 class="col col-12">Games from this publisher</h4>
-                  
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 pt-5">
-            {% for game in publisher.game_set.all %}
-              <div class="col mb-4">
-                <div class="card card_small_preview">
-                  <div class="row">
-                    <div class="col-4">
-                      {% if game.image %}
-                        <img src="{{ game.image.url }}" class="card-img" alt="...">
-                      {% else %}
-                          <img src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
-                      {% endif %}
-                    </div>
-                    <div class="col-8 col-md-7">
-                      <div class="card-body">
-                        <h5 class="card-title">{{ game.title }}</h5>
-                        <p class="card-text">
-                          <a href="{% url 'game_detail' game.id %}">About this game</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+        
+        <h4 class="col col-12">Games from this publisher</h4>          
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 p-5">
+          {% for game in publisher.game_set.all %}
+            <div class=" col card_small_preview  p-1">
+              <div class="media card__meta">
+                {% if game.image %}
+                  <img src="{{ game.image.url }}" alt="...">
+                {% else %}
+                  <img src="{% static 'core/no_image.jpg' %}" alt="...">
+                {% endif %}
+                <div class="p-2 media-body">
+                  <h4>{{ game.title }}</h4>
+                  <a href="{% url 'game_detail' game.id %}">About this game</a>
                 </div>
               </div>
-            {% endfor %}
-          </div>
-                  
-        </div>
+            </div>
+          {% endfor %}
+        </div>       
       </div>
     {% endif %}
   </div>

@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block content %}
-  <div class="container pt-5 align-content-center">
+  <div class="container pt-3 align-content-center">
     {% if game %}
-      <div class="row row-cols-1">
+      <div class="row row-cols-1 content_detail">
         {% if game.image %}
-          <img class="col col-12 publisher_detail" src="{{ game.image.url }}" class="card-img" alt="...">
+          <img class="col col-12" src="{{ game.image.url }}" alt="...">
         {% else %}
-          <img class="col col-12 publisher_detail" src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
+          <img class="col col-12" src="{% static 'core/no_image.jpg' %}" alt="...">
         {% endif %}
         <h1 class="col col-12 pt-3">{{ game.title }}</h1>
         <h6 class="col col-12">Descripcion del juego</h6>
