@@ -8,7 +8,7 @@ from .models import Publisher
 class PubListView(ListView):
     model = Publisher
     template_name = 'publishers/publishers_list.html'
-    paginate_by = 3
+    paginate_by = 4  
     context_object_name = 'publishers'
 
     def get_context_data(self, **kwargs):
