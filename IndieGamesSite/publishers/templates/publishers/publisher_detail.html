@@ -6,14 +6,19 @@
     {% if publisher %}
 
       <div class="row row-cols-1 content_detail">
-        {% if publisher.image %}
-          <img class="col col-12" src="{{ publisher.image.url }}" alt="...">
+        {% if publisher.cover %}
+          <img class="col col-12" src="{{ publisher.cover.url }}" alt="...">
         {% else %}
           <img class="col col-12" src="{% static 'core/no_image.jpg' %}" alt="">
         {% endif %}
       
         <h1 class="col col-12 pt-3">{{ publisher.name }}</h1>
-        <h6 class="col col-12">Descripcion de la editorial</h6>
+        <h6 class="col col-12">About this publisher</h6>
+        {% if publisher.about %}
+          <h6 class="col col-12">{{ publisher.about }}</h6>
+        {% else %}
+          <h6 class="col col-12">No description aviabled</h6>
+        {% endif %}
         <hr>
         
         <h4 class="col col-12">Games from this publisher</h4>          
@@ -21,8 +26,8 @@
           {% for game in publisher.game_set.all %}
             <div class=" col card_small_preview  p-1">
               <div class="media card__meta">
-                {% if game.image %}
-                  <img src="{{ game.image.url }}" alt="...">
+                {% if game.preview_picture %}
+                  <img src="{{ game.preview_picture.url }}" alt="...">
                 {% else %}
                   <img src="{% static 'core/no_image.jpg' %}" alt="...">
                 {% endif %}
