@@ -60,8 +60,8 @@
 }
 
 .steam_ico img {
-    max-height: 60px;
-    max-width: 60px;
+    max-height: 64px;
+    max-width: 64px;
 }
 
 .index_content h1 {
@@ -106,7 +106,14 @@
     color: gold;
   }
 
-  .pagination_list a:hover:not(.active) {background-color: #ddd;}
+.pagination_list a:hover:not(.active) {background-color: #ddd;}
 
+.footer_style {
+    background-color: #292929;
+    color: gold;
+}
 
-
+.footer_icons img {
+    max-height: 64px;
+    max-width: 64px;
+}
