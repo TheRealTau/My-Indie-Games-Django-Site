@@ -18,12 +18,14 @@ class Game(models.Model):
         return self.title
     
     class Meta:
-        verbose_name = "Juego"
-        verbose_name_plural = "Juegos"
-        ordering = ['-title']
+        verbose_name = "Game"
+        verbose_name_plural = "Games"
+        ordering = ['title']
     
-    title = models.CharField(max_length=100, verbose_name='Titulo')
-    publisher = models.ForeignKey(Publisher, max_length=100, verbose_name='Editor', on_delete=models.CASCADE, blank=True)
+    title = models.CharField(max_length=100, verbose_name='Title')
+    about = models.TextField(verbose_name='About this game', blank=True, default='')
+    publisher = models.ForeignKey(Publisher, max_length=100, verbose_name='Publisher', on_delete=models.CASCADE, blank=True)
     release_date = models.DateField(verbose_name='Fecha de publicación')
-    image = models.ImageField(blank=True, verbose_name='Imagen', upload_to=custom_game_upload)
-    steam_link = models.URLField(blank=True, verbose_name='Link a pagina de steam')
+    cover = models.ImageField(blank=True, verbose_name='Cover image', upload_to=partial(custom_game_upload, prefix='cover'))
+    preview_picture = models.ImageField(blank=True, verbose_name='Preview image', upload_to=partial(custom_game_upload, prefix='preview'))
+    steam_link = models.URLField(blank=True, verbose_name='Link to steam page')
