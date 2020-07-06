@@ -10,12 +10,13 @@
     </div>
     <div class="row row-cols-1 row-cols-md-2 pt-2">
       {% for publisher in publishers %}
+
         <div class="col mb-4">
             <div class="card card_preview card__meta">
                 <div class="row">
                     <div class="col-4 col-md-5">
-                        {% if publisher.image %}
-                            <img src="{{ publisher.image.url }}" class="card-img" alt="...">
+                        {% if publisher.profile_picture %}
+                            <img src="{{ publisher.profile_picture.url }}" class="card-img" alt="...">
                         {% else %}
                         <img src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
                         {% endif %}
@@ -24,9 +25,9 @@
                     <div class="col-8 col-md-7">
                         <div class="card-body">
                             <h5 class="card-title">{{ publisher.name }}</h5>
-                            <p class="card-text"><small class="text-muted">Text: </small>
+                            <p class="card-text"><small class="text-muted">Games published:  {{ publisher.game_set.all.count }}</small>
                             </p>
-                            <a href="{% url 'publisher_detail' publisher.id %}">Show more info</a>
+                            <a href="{% url 'publisher_detail' publisher.id %}">About</a>
                         </div>
                     </div>
                 </div>

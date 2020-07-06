@@ -14,8 +14,8 @@
           <div class="card card_preview card__meta">
             <div class="row">
               <div class="col-4 col-md-5">
-                {% if game.image %}
-                  <img src="{{ game.image.url }}" class="card-img" alt="...">
+                {% if game.preview_picture %}
+                  <img src="{{ game.preview_picture.url }}" class="card-img" alt="...">
                 {% else %}
                   <img src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
                 {% endif %}
@@ -25,9 +25,8 @@
                   <h4 class="card-title">{{ game.title }}</h4>
                   <p class="card-text"><small class="text-muted">release date: {{ game.release_date }}</small>
                     <br><small class="text-muted">Publisher: {{ game.publisher.name }}</small> 
-                    <!-- <br><small class="text-muted">Genres: {{ game.release_date }}</small> -->
                   </p>
-                  <a href="{% url 'game_detail' game.id %}">Show more info</a>
+                  <a href="{% url 'game_detail' game.id %}">About</a>
                 </div>
               </div>
             </div>
