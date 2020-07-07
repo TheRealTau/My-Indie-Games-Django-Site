@@ -1,6 +1,7 @@
 from django.db import models
 from publishers.models import Publisher
 from functools import partial
+from taggit.managers import TaggableManager
 
 
 def custom_game_upload(instance, file_name, prefix):
@@ -29,3 +30,4 @@ class Game(models.Model):
     cover = models.ImageField(blank=True, verbose_name='Cover image', upload_to=partial(custom_game_upload, prefix='cover'))
     preview_picture = models.ImageField(blank=True, verbose_name='Preview image', upload_to=partial(custom_game_upload, prefix='preview'))
     steam_link = models.URLField(blank=True, verbose_name='Link to steam page')
+    tags = TaggableManager(verbose_name='Tags')
