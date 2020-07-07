@@ -114,6 +114,7 @@
 }
 
 .footer_icons img {
-    max-height: 64px;
-    max-width: 64px;
+    height: 48px;
+    width: 48px;
+}
 }
