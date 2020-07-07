@@ -1,15 +1,17 @@
 
 .card_preview div {
-    max-height: 200px;
-    max-width: 400px;
+    height: 200px;
+    width: 400px;
 }
 
 .card_preview img {
-    max-height: 200px;
+    max-height: 100%;
     max-width: 100%;
     object-fit: cover;
     width: fit-content;
     height: fit-content;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .card__meta {
@@ -114,6 +116,22 @@
 }
 
 .footer_icons img {
-    max-height: 64px;
-    max-width: 64px;
+    height: 48px;
+    width: 48px;
+}
+
+.contact_form form {
+    background-color: #292b2c;
+    padding: 50px;
+    color: #f7f7f7;
+}
+
+.btn-contact {
+    background-color: #7D6608;
+    color: #f7f7f7;
+}
+
+input[type="submit"].btn-contact:hover {
+    background-color: #F1C40F;
+    color: #292b2c;
 }
