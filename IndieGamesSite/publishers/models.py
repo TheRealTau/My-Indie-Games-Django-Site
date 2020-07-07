@@ -26,3 +26,4 @@ class Publisher(models.Model):
     about = models.TextField(verbose_name='About the publisher', blank=True, default='')
     cover = models.ImageField(blank=True, verbose_name="Cover image", upload_to=partial(custom_pub_upload, prefix='cover'))
     profile_picture = models.ImageField(blank=True, verbose_name="Publisher profile image", upload_to=partial(custom_pub_upload, prefix='profile'))
+    site_link = models.URLField(blank=True, verbose_name='Link to official studio site')
