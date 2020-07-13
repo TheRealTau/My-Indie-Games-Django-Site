@@ -1,4 +1,46 @@
 
+@font-face {
+    font-family: 'Aton';
+    src: url('../fonts/Anton/Anton-Regular.ttf') format("truetype");
+
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format("truetype");
+
+}
+
+body {
+    font-family: 'Roboto Slab';
+    background-color: #eee;
+}
+
+.index_content {
+    margin: 10%;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.index_content h1 {
+    font-family: 'Aton';
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 30px auto 30px auto;
+}
+
+.index_content li {
+    font-weight: 700;
+}
+
+.index_content h5 {
+    text-align: right;
+    margin: auto;
+}
+
 .card_preview div {
     height: 200px;
     width: 400px;
@@ -43,56 +85,13 @@
     margin: 0;
 }
 
-.content_detail div {
-    max-height: 200px;
-    max-width: 100%;
-    /* object-fit: cover; */
-}
-
-.content_detail img {
-    max-height: 200px;
-    object-fit: cover;
-    /* width: fit-content; */
-    height: fit-content;
-    /* border: 10px solid gold; */
-}
-
-.content_detail h1 {
-    text-align: center;
-}
-
-.steam_ico img {
-    max-height: 64px;
-    max-width: 64px;
-}
-
-.index_content h1 {
-    text-align: center;
-    font-size: 40px;
-    color: #333333;
-    font-weight: 400;
-    font-family: Tahoma, Geneva, sans-serif;
-}
-
-.index_content h5 {
-    text-align: left;
-    font-size: 20px;
-    color: #333333;
-    font-weight: 300;
-    font-family: Tahoma, Geneva, sans-serif;
-}
-
 .main_color h3 {
     color: gold;
 }
 
-.section_title h1 {
-    text-align: center;
-}
-
 .pagination_style {
     display: inline-block;
-  }
+}
 
 .pagination_list a {
     color: black;
@@ -106,7 +105,7 @@
 .pagination_list a.active {
     background-color: gray;
     color: gold;
-  }
+}
 
 .pagination_list a:hover:not(.active) {background-color: #ddd;}
 
@@ -118,6 +117,10 @@
 .footer_icons img {
     height: 48px;
     width: 48px;
+}
+
+.footer_icons a {
+    padding-left: 10px;
 }
 
 .contact_form form {
@@ -135,3 +138,33 @@ input[type="submit"].btn-contact:hover {
     background-color: #F1C40F;
     color: #292b2c;
 }
+
+.content_detail div {
+    max-height: 200px;
+    max-width: 100%;
+    /* object-fit: cover; */
+}
+
+.content_detail img {
+    max-height: 200px;
+    object-fit: cover;
+    /* width: fit-content; */
+    height: fit-content;
+    padding-bottom: 30px;
+}
+
+.content_detail h4 {
+    padding-bottom: 20px;
+}
+
+.content_detail h1 {
+    padding-bottom: 40px;
+    text-align: center
+}
+
+.steam_ico img {
+    max-height: 64px;
+    max-width: 64px;
+}
+
+
