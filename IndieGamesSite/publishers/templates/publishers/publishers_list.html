@@ -2,58 +2,45 @@
 {% load static %}
 
 {% block content %}
-  <div class="container pt-2">
-    <div class="row section_title">
-      <div class="col-12">
-        <p><h1>Publishers list</h1></p>
+  <div class="row section_title">
+    <p><h1>Publishers list</h1></p>
+  </div>
+  {% for publisher in publishers %}
+    <div class="row row-12 row-cols-2 publisher_preview">
+      <div class="col col-3">
+        {% if publisher.profile_picture %}
+          <img class="img-fluid" src="{{ publisher.profile_picture.url }}" class="card-img" alt="...">
+        {% else %}
+          <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
+        {% endif %}
+      </div>
+      <div class="col col-7 left_border">
+        <h2>{{ publisher.name }}</h2>
+        <h5>Games published:  {{ publisher.game_set.all.count }}</h5>
+        <br>
+        <a href="{% url 'publisher_detail' publisher.id %}">About</a>
       </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 pt-2">
-      {% for publisher in publishers %}
+  {% endfor %}
 
-        <div class="col mb-4">
-            <div class="card card_preview card__meta">
-                <div class="row">
-                    <div class="col-4 col-md-5">
-                        {% if publisher.profile_picture %}
-                            <img src="{{ publisher.profile_picture.url }}" class="card-img" alt="...">
-                        {% else %}
-                        <img src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
-                        {% endif %}
-                    
-                    </div>
-                    <div class="col-8 col-md-7">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ publisher.name }}</h5>
-                            <p class="card-text"><small class="text-muted">Games published:  {{ publisher.game_set.all.count }}</small>
-                            </p>
-                            <a href="{% url 'publisher_detail' publisher.id %}">About</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      {% endfor %}
-    </div>
-    <div class="row justify-content-center pt-2 pb-5">
-      {% if is_paginated %}
-        <div class="pagination_list">
-          {% if page_obj.has_previous %}
-              <a class="" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
-          {% else %}
-              <a class="disabled" href="#" tabindex="-1">&laquo;</a>
-          {% endif %}
-          {% for i in paginator.page_range %}
-              <a class="{% if page_obj.number == i %}active{% endif %}" href="?page={{ i }}">{{ i }}</a>
-          {% endfor %}
-          {% if page_obj.has_next %}
-              <a class="" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
-          {% else %}
-              <a class="disabled" href="#" tabindex="-1">&raquo;</a>
-              </li>
-          {% endif %}
-        </nav>
-      {% endif %}
-    </div>
+  <div class="row justify-content-center pt-2 pb-5">
+    {% if is_paginated %}
+      <div class="pagination_list">
+        {% if page_obj.has_previous %}
+          <a class="" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+        {% else %}
+          <a class="disabled" href="#" tabindex="-1">&laquo;</a>
+        {% endif %}
+        {% for i in paginator.page_range %}
+          <a class="{% if page_obj.number == i %}active{% endif %}" href="?page={{ i }}">{{ i }}</a>
+        {% endfor %}
+        {% if page_obj.has_next %}
+          <a class="" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+        {% else %}
+          <a class="disabled" href="#" tabindex="-1">&raquo;</a>
+          </li>
+        {% endif %}
+      </nav>
+    {% endif %}
   </div>
 {% endblock %}

@@ -1,98 +1,191 @@
 
-.card_preview div {
+@font-face {
+    font-family: 'Aton';
+    src: url('../fonts/Anton/Anton-Regular.ttf') format("truetype");
+
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format("truetype");
+
+}
+
+body {
+    font-family: 'Roboto Slab';
+    background-color: #F0F3F4;
+}
+
+.index_content {
+    margin: 10%;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: left;
+}
+
+.index_content h1 {
+    font-family: 'Aton';
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 30px auto 30px auto;
+}
+
+.index_content li {
+    font-weight: 700;
+}
+
+.index_content h5 {
+    text-align: right;
+    margin: auto;
+}
+
+.section_title h1 {
+    font-family: 'Aton';
+    font-size: 60px;
+    font-weight: 400;
+    text-align: center;
+    margin: 30px auto 30px auto;
+}
+
+.contact_content {
+    margin: 10%;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: left;
+    text-align: center;
+    margin: auto;
+}
+
+.game_preview {
     height: 200px;
-    width: 400px;
+    width: auto;
+    margin: 10px;
+    padding: 0;
+    color: #333333;
+    background-color: #FBFCFC;
 }
 
-.card_preview img {
-    max-height: 100%;
-    max-width: 100%;
+.game_preview div {
+    height: 200px;
+    width: auto;
+    padding: 0;
+}
+
+.game_preview img {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
-    width: fit-content;
-    height: fit-content;
-    background-position: center center;
-    background-repeat: no-repeat;
 }
 
-.card__meta {
+.game_preview h4 {
+    margin: 2vw 0 0 2vw;
+    padding:  0;
+    font-weight: 700;
+}
+
+.game_preview h6 {
+    margin: 0 0 0 2vw;
+    padding:  0;
+    /* line-height: 5px; */
+}
+
+.game_preview a {
+    color: gold;
+    font-weight: 700;
+    font-size: larger;
+    margin: 2vw 0 0 2vw;
+}
+
+.publisher_preview {
+    height: 200px;
+    width: auto;
+    margin: 10px;
+    color: #333333;
+    background-color: #FBFCFC;
+}
+
+.publisher_preview div {
+    height: 200px;
     margin: 0;
-    color: #999;
-    background-color: #292929;
+    padding: 0;
+}
+
+.publisher_preview div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+}
+
+.publisher_preview h2, h5 {
+    margin: 2vw 0 0 3vw;
+}
+
+.publisher_preview div a {
+    color: gold;
+    margin: 10vw 0 0 3vw;
+}
+
+.left_border {
+    border-left: 10px solid gold;
 }
 
 .card__meta a {
     color: gold;
 }
 
-.card_small_preview {
+.small_preview {
     height: 100px;
-    width: 350px;
+    max-width: 400px;
     overflow: hidden;
+    margin: 10px;
+    padding: 0;
+    background-color: #ECF0F1 ;
+    line-height: 5px;
+}
+
+.small_preview div {
+    margin: 0;
     padding: 0;
 }
 
-.card_small_preview img {
-    max-height: 100px;
-    max-width: 100px;
-    object-fit: contain;
-    width: fit-content;
-    height: fit-content;
-    align-self: left;
-    align-content: left;
-    padding-left: 0;
-    margin: 0;
-}
-
-.content_detail div {
-    max-height: 200px;
-    max-width: 100%;
-    /* object-fit: cover; */
-}
-
-.content_detail img {
-    max-height: 200px;
+.small_preview img {
+    height: auto;
+    width: auto;
     object-fit: cover;
-    /* width: fit-content; */
-    height: fit-content;
-    /* border: 10px solid gold; */
+    margin: 0;
+    padding: 0;
 }
 
-.content_detail h1 {
+.small_preview h4 {
+    font-size: large;
+    font-weight: 700;
+    margin: 5px;
     text-align: center;
 }
-
-.steam_ico img {
-    max-height: 64px;
-    max-width: 64px;
-}
-
-.index_content h1 {
-    text-align: center;
-    font-size: 40px;
-    color: #333333;
-    font-weight: 400;
-    font-family: Tahoma, Geneva, sans-serif;
-}
-
-.index_content h5 {
+.small_preview h3 {
+    font-size: xx-large;
+    margin-left: 10px;
+    font-weight: 800;
     text-align: left;
-    font-size: 20px;
-    color: #333333;
-    font-weight: 300;
-    font-family: Tahoma, Geneva, sans-serif;
+}
+
+.small_preview a {
+    font-size: medium;
+    text-align: center;
 }
 
 .main_color h3 {
     color: gold;
 }
 
-.section_title h1 {
-    text-align: center;
-}
-
 .pagination_style {
     display: inline-block;
-  }
+}
 
 .pagination_list a {
     color: black;
@@ -106,7 +199,7 @@
 .pagination_list a.active {
     background-color: gray;
     color: gold;
-  }
+}
 
 .pagination_list a:hover:not(.active) {background-color: #ddd;}
 
@@ -120,7 +213,12 @@
     width: 48px;
 }
 
+.footer_icons a {
+    padding-left: 10px;
+}
+
 .contact_form form {
+    margin: 50px;
     background-color: #292b2c;
     padding: 50px;
     color: #f7f7f7;
@@ -134,4 +232,47 @@
 input[type="submit"].btn-contact:hover {
     background-color: #F1C40F;
     color: #292b2c;
+}
+
+.content_cover {
+    max-height: 200px;
+    max-width: 100%;
+    margin: 1vw 0 0 0;
+    /* object-fit: cover; */
+}
+
+.content_cover img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* width: fit-content; */
+    /* height: fit-content; */
+    /* padding-bottom: 30px; */
+}
+
+.content_detail {
+    background-color: #FBFCFC;
+    margin: 0 auto 5vw auto;
+    padding: 5vw;
+}
+
+.content_detail h1 {
+    padding-bottom: 40px;
+    text-align: center
+}
+
+.content_detail h4 {
+    padding-bottom: 20px;
+}
+
+.content_detail a:first-of-type {
+    color: gold;
+    font-weight: 700;
+    font-size: larger;
+    margin: 2vw 0 0 2vw;
+}
+
+.steam_ico img {
+    max-height: 64px;
+    max-width: 64px;
 }

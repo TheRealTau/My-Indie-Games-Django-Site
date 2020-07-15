@@ -18,8 +18,8 @@ class Publisher(models.Model):
         return self.name
     
     class Meta:
-        verbose_name = "Editor"
-        verbose_name_plural = "Editores"
+        verbose_name = "Publisher"
+        verbose_name_plural = "Publishers"
         ordering = ['-name']
     
     name = models.CharField(max_length=100, verbose_name='Publisher name')
