@@ -2,65 +2,63 @@
 {% load static %}
 
 {% block content %}
-  <div class="container pt-3 align-content-center">
+  <div class="row row-cols-1">
     {% if game %}
-      <div class="row row-cols-1 content_detail">
+      <div class="col col-12 content_cover">
         {% if game.cover %}
-          <img class="col col-12" src="{{ game.cover.url }}" alt="...">
+          <img class="img-fluid" src="{{ game.cover.url }}" alt="...">
         {% else %}
-          <img class="col col-12" src="{% static 'core/no_image.jpg' %}" alt="...">
+          <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="...">
         {% endif %}
-        <h1 class="col col-12 pt-3">{{ game.title }}</h1>
-        <h6 class="col col-12">About</h6>
-        {% if game.about %}
-          <h6 class="col col-12">{{ game.about }}</h6>
-        {% else %}
-          <h6 class="col col-12">No description aviabled</h6>
-        {% endif %}
-        <hr>
-        <h5 class="col col-12">Tags</h5>
-        
-        <div class="row row-12 pb-3">
-          {% if game.tags %}
-            {% for tag in game.tags.all %}
-            <h4 class="pl-2"><a href="{% url 'tagged_games' tag %}"><span class="col badge badge-dark">{{ tag }}</span></a></h4>
-            {% endfor %}
-          {% else %}
-            <h6 class="col">TEST<small>No tags registered for this game</small></h6>
-          {% endif %}
-        </div>
-        
-        <div>
-          <a class="steam_ico" href="{{ game.steam_link }}">
-            <img class="ico-home" src="{% static 'core/ico/steam.ico' %}" alt=""></img>
-          </a>
-        </div>
-        <hr>
-        <h5 class="col col-12">Publisher</h5>
-        <div>                  
-          <div class="row row-cols-1 p-5">
-              <!-- <div class="col mb-4"> -->
-                <div class="col card_small_preview p-1">
-                  <div class="media card__meta">
-                      {% if game.publisher.profile_picture %}
-                        <img src="{{ game.publisher.profile_picture.url }}" alt="...">
-                      {% else %}
-                        <img src="{% static 'core/no_image.jpg' %}" alt="...">
-                      {% endif %}
-                    <div class="col-8 col-md-7">
-                      <div class="card-body">
-                        <h5 class="card-title">{{ game.publisher.name }}</h5>
-                        <p class="card-text">
-                          <p class="card-text"><small class="text-muted">Games published:  {{ game.publisher.game_set.all.count }}</small>
-                          <a href="{% url 'publisher_detail' game.publisher.id %}">About</a>
-                        </p>
-                      </div>
-                    <!-- </div> -->
-                  </div>
-                </div>
-              </div>
+      </div>
+        <div class="col col-10 offset-1 content_detail"> 
+          <h1 class="row row-10">{{ game.title }}</h1>
+          <h4 class="row row-10">About</h4>
+          <h6 class="row row-10">
+            {% if game.about %}
+              {{ game.about }}
+            {% else %}
+              No description aviabled
+            {% endif %}
+          </h6>
+          <hr>
+          <h4 class="row row-10">Tags</h4>
+          
+          <div class="row row-10 offset-1 pb-3">
+            {% if game.tags.all %}
+              {% for tag in game.tags.all %}
+              <h5 class="pl-2"><a href="{% url 'tagged_games' tag %}"><span class="col badge badge-dark">{{ tag }}</span></a></h5>
+              {% endfor %}
+            {% else %}
+              <h6 class="col"><small>No tags registered for this game</small></h6>
+            {% endif %}
           </div>
-                  
+
+          <div class="row row-10">
+            <a class="steam_ico" href="{{ game.steam_link }}">
+              <img class="ico-home" src="{% static 'core/ico/steam.ico' %}" alt=""></img>
+            </a>
+          </div>
+          <hr>
+
+          <h4 class="row row-10 row-cols-1">Publisher</h4>
+          <div class="col col-12 card_small_preview p-1">
+            <div class="media card__meta">
+                {% if game.publisher.profile_picture %}
+                  <img src="{{ game.publisher.profile_picture.url }}" alt="...">
+                {% else %}
+                  <img src="{% static 'core/no_image.jpg' %}" alt="...">
+                {% endif %}
+              <div class="col-8 col-md-7">
+                <div class="card-body">
+                  <h5 class="card-title">{{ game.publisher.name }}</h5>
+                  <p class="card-text">
+                    <p class="card-text"><small class="text-muted">Games published:  {{ game.publisher.game_set.all.count }}</small>
+                    <a href="{% url 'publisher_detail' game.publisher.id %}">About</a>
+                  </p>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     {% endif %}
