@@ -59,23 +59,44 @@ body {
     margin: auto;
 }
 
-.card_preview {
+.game_preview {
     height: 200px;
     width: auto;
+    margin: 10px;
+    padding: 0;
+    color: #333333;
+    background-color: #FBFCFC;
 }
 
-.card_preview div {
-    height: 100%;
+.game_preview div {
+    height: 200px;
     width: auto;
+    padding: 0;
 }
 
-.card_preview img {
+.game_preview img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
-.card_preview h4, p {
-    margin: 1vw 0 0 0;
+.game_preview h4 {
+    margin: 2vw 0 0 2vw;
+    padding:  0;
+    font-weight: 700;
+}
+
+.game_preview h6 {
+    margin: 0 0 0 2vw;
+    padding:  0;
+    /* line-height: 5px; */
+}
+
+.game_preview a {
+    color: gold;
+    font-weight: 700;
+    font-size: larger;
+    margin: 2vw 0 0 2vw;
 }
 
 .publisher_preview {
