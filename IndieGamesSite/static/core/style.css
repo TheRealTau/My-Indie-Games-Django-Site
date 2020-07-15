@@ -92,7 +92,7 @@ body {
     /* line-height: 5px; */
 }
 
-.game_preview a {
+.game_preview div.left_border a {
     color: gold;
     font-weight: 700;
     font-size: larger;
@@ -125,7 +125,7 @@ body {
     margin: 2vw 0 0 3vw;
 }
 
-.publisher_preview div a {
+.publisher_preview div.left_border a {
     color: gold;
     margin: 10vw 0 0 3vw;
 }

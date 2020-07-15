@@ -10,9 +10,9 @@
       <div class="row row-12 row-cols-2 publisher_preview">
         <div class="col col-3">
           {% if publisher.profile_picture %}
-            <img class="img-fluid" src="{{ publisher.profile_picture.url }}" class="card-img" alt="...">
+          <a href="{% url 'publisher_detail' publisher.id %}"><img class="img-fluid" src="{{ publisher.profile_picture.url }}" class="card-img" alt="Publisher preview image"></a>
           {% else %}
-            <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
+          <a href="{% url 'publisher_detail' publisher.id %}"><img class="img-fluid" src="{% static 'core/no_image.jpg' %}" class="card-img" alt="No publisher preview image available"></a>
           {% endif %}
         </div>
         <div class="col col-7 left_border">
