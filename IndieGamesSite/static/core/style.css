@@ -138,23 +138,45 @@ body {
     color: gold;
 }
 
-.card_small_preview {
+.small_preview {
     height: 100px;
-    width: 350px;
+    max-width: 400px;
     overflow: hidden;
+    margin: 10px;
+    padding: 0;
+    background-color: #ECF0F1 ;
+    line-height: 5px;
+}
+
+.small_preview div {
+    margin: 0;
     padding: 0;
 }
 
-.card_small_preview img {
-    max-height: 100px;
-    max-width: 100px;
-    object-fit: contain;
-    width: fit-content;
-    height: fit-content;
-    align-self: left;
-    align-content: left;
-    padding-left: 0;
+.small_preview img {
+    height: auto;
+    width: auto;
+    object-fit: cover;
     margin: 0;
+    padding: 0;
+}
+
+.small_preview h4 {
+    font-size: large;
+    font-weight: 700;
+    margin: 5px;
+    text-align: center;
+}
+.small_preview h3 {
+    font-size: xx-large;
+    margin-left: 10px;
+    font-weight: 800;
+    text-align: left;
+}
+
+.small_preview a {
+    font-size: medium;
+    text-align: center;
 }
 
 .main_color h3 {
@@ -241,6 +263,13 @@ input[type="submit"].btn-contact:hover {
 
 .content_detail h4 {
     padding-bottom: 20px;
+}
+
+.content_detail a:first-of-type {
+    color: gold;
+    font-weight: 700;
+    font-size: larger;
+    margin: 2vw 0 0 2vw;
 }
 
 .steam_ico img {

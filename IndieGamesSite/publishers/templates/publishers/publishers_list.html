@@ -16,7 +16,8 @@
       </div>
       <div class="col col-7 left_border">
         <h2>{{ publisher.name }}</h2>
-        <p>Games published:  {{ publisher.game_set.all.count }}</p>
+        <h5>Games published:  {{ publisher.game_set.all.count }}</h5>
+        <br>
         <a href="{% url 'publisher_detail' publisher.id %}">About</a>
       </div>
     </div>

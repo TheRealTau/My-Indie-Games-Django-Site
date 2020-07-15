@@ -42,21 +42,17 @@
           <hr>
 
           <h4 class="row row-10 row-cols-1">Publisher</h4>
-          <div class="col col-12 card_small_preview p-1">
-            <div class="media card__meta">
-                {% if game.publisher.profile_picture %}
-                  <img src="{{ game.publisher.profile_picture.url }}" alt="...">
-                {% else %}
-                  <img src="{% static 'core/no_image.jpg' %}" alt="...">
-                {% endif %}
-              <div class="col-8 col-md-7">
-                <div class="card-body">
-                  <h5 class="card-title">{{ game.publisher.name }}</h5>
-                  <p class="card-text">
-                    <p class="card-text"><small class="text-muted">Games published:  {{ game.publisher.game_set.all.count }}</small>
-                    <a href="{% url 'publisher_detail' game.publisher.id %}">About</a>
-                  </p>
-                </div>
+          <div class="row row-cols-2 small_preview">
+            <div class="col col-4 col-md-5">
+              {% if game.publisher.profile_picture %}
+                <img class="img-fluid" src="{{ game.publisher.profile_picture.url }}" alt="...">
+              {% else %}
+                <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="...">
+              {% endif %}
+            </div>
+            <div class="col left_border">
+              <h3>{{ game.publisher.name }}</h3>
+              <a href="{% url 'publisher_detail' game.publisher.id %}">About</a>
             </div>
           </div>
         </div>
