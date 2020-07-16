@@ -3,24 +3,55 @@
 {% block title %}Home{% endblock %}
 <!--CONTENT-->
 {% block content %}
-    <div class="row index_content">
-        <h1>Hello, ¡Welcome to the IndieGamesSite!</h1>
-        <p>
-          This small site was made for practice porpuses,
-          all the information posted on the site is true so you can check it if you wish,
-          maybe you will find a new game for you.
-        </p>
-        <br>
-        <p>
-          If you are interesting on:
-        </p>  
-        <ul>
-          <li>Check the source code from this site; visit the link to the GitHub repo on the footer below.</li>
-          <li>Contact the developer; visit the Contact section on the top menu (navbar).</li>
-          <li>Hacking this site; please dont, I am current unemploy and I am using this site as part of my personal porfolio</li>
-        </ul>
-        <p><h5>Octavio <small>(Developer)</small></h5></p>
+  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselIndicators" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+      {% for game in recent_games %}
+        {% if forloop.first %}
+          <div class="carousel-item active">
+        {% else %}
+          <div class="carousel-item">
+        {% endif %}
+          <img src="{{ game.cover.url }}" class="img-fluid" alt="Game cover image">
+          <div class="carousel-caption d-none d-md-block">
+            <a href="{% url 'game_detail' game.id %}"><h1>{{ game.title }}</h1></a>
+          </div>
+        </div>
+      {% endfor %}
     </div>
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+      
+  <div class="row index_content">
+    <h1>Hello, ¡Welcome to the IndieGamesSite!</h1>
+    <p>
+      This small site was made for practice porpuses,
+      all the information posted on the site is true so you can check it if you wish,
+      maybe you will find a new game for you.
+    </p>
+    <br>
+    <p>
+      If you are interesting on:
+    </p>  
+    <ul>
+      <li>Check the source code from this site; visit the link to the GitHub repo on the footer below.</li>
+      <li>Contact the developer; visit the Contact section on the top menu (navbar).</li>
+      <li>Hacking this site; please dont, I am current unemploy and I am using this site as part of my personal porfolio</li>
+    </ul>
+    <p><h5>Octavio <small>(Developer)</small></h5></p>
+  </div>
 {% endblock %}
 
 

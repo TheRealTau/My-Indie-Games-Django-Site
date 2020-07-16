@@ -16,13 +16,35 @@ body {
     background-color: #F0F3F4;
 }
 
+.carousel-inner  img {
+    height : 400px;
+    width : 100%;
+    object-fit: cover;
+    /* padding: 7vw auto 2vw auto; */
+}
+
+.carousel-inner  h1 {
+    color: white;
+    font-family: 'Aton';
+    font-weight: 900;
+    font-size: 70px;
+    -webkit-text-stroke: 1px black;
+    text-decoration: none;
+}
+
+.carousel-inner a {
+    color: white;
+    text-decoration: none;
+}
+
 .index_content {
-    margin: 10%;
+    margin: 5vw;
     color: #333333;
     font-size: 20px;
     font-weight: 300;
     text-align: left;
 }
+
 
 .index_content h1 {
     font-family: 'Aton';
