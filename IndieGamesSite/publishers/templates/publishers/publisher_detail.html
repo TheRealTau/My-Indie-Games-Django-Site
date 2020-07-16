@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block title %}{{ publisher.name }}{% endblock %}
 {% block content %}
-  <div class="row row-cols-1">
+  <div class="row row-cols-1 offset-1 m-0">
     {% if publisher %}
-      <div class="col col-12 content_cover">
+      <div class="col col-10 content_cover">
         {% if publisher.cover %}
-          <img class="col col-12" src="{{ publisher.cover.url }}" alt="...">
+          <img class="img-fluid" src="{{ publisher.cover.url }}" alt="...">
         {% else %}
-          <img class="col col-12" src="{% static 'core/no_image.jpg' %}" alt="">
+          <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="">
         {% endif %}
       </div>
       <div class="col col-10 offset-1 content_detail">
-        <h1 class="row row-10">{{ publisher.name }}</h1>
-        <h6 class="row row-10">About this publisher</h6>
-        <h6 class="row row-10"></h6>
+        <h1 class="row">{{ publisher.name }}</h1>
+        <h6 class="row">About this publisher</h6>
+        <h6 class="row"></h6>
           {% if publisher.about %}
             {{ publisher.about }}
           {% else %}
@@ -22,9 +22,9 @@
           {% endif %}
         </h6>
         <br>
-        <a class="row row-10" href="{{ publisher.site_link }}">Official site</a>
+        <a class="row" href="{{ publisher.site_link }}" target="_blank">Official site</a>
         <hr>
-        <h4 class="row row-10">Games from this publisher</h4>          
+        <h4 class="row">Games from this publisher</h4>          
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
           {% for game in publisher.game_set.all %}
             <div class="col">

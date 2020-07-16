@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block title %}Contact{% endblock %}
 {% block content %}
-  <div class="contact_form section_title">
+  <div class="contact_form section_title content_wrapper">
     <h1>Contact me</h1>
     <h5 class="contact_content">On this form you can send me any comments/questions about the site or if you want to offer me a job/project opportunity you can send me the info too :D</h5>
     
@@ -27,7 +27,7 @@
         {{form.email.errors}}
       </div>
       <div class="form-group">
-        <label>Mensaje *</label>
+        <label>Message *</label>
         <div class="input-group">
             {{form.comments}}
         </div>
@@ -37,6 +37,5 @@
           <input type="submit" class="btn btn-contact btn-block" value="Send">
       </div>
     </form>
-
   </div>
 {% endblock %}

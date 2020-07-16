@@ -16,13 +16,35 @@ body {
     background-color: #F0F3F4;
 }
 
+.carousel-inner  img {
+    height : 400px;
+    width : 100%;
+    object-fit: cover;
+    /* padding: 7vw auto 2vw auto; */
+}
+
+.carousel-inner  h1 {
+    color: white;
+    font-family: 'Aton';
+    font-weight: 900;
+    font-size: 70px;
+    -webkit-text-stroke: 1px black;
+    text-decoration: none;
+}
+
+.carousel-inner a {
+    color: white;
+    text-decoration: none;
+}
+
 .index_content {
-    margin: 10%;
+    margin: 5vw;
     color: #333333;
     font-size: 20px;
     font-weight: 300;
     text-align: left;
 }
+
 
 .index_content h1 {
     font-family: 'Aton';
@@ -92,7 +114,7 @@ body {
     /* line-height: 5px; */
 }
 
-.game_preview a {
+.game_preview div.left_border a {
     color: gold;
     font-weight: 700;
     font-size: larger;
@@ -125,13 +147,17 @@ body {
     margin: 2vw 0 0 3vw;
 }
 
-.publisher_preview div a {
+.publisher_preview div.left_border a {
     color: gold;
     margin: 10vw 0 0 3vw;
 }
 
 .left_border {
     border-left: 10px solid gold;
+}
+.content_wrapper {
+    margin: 0;
+    padding: 0 3vw 0 3vw;
 }
 
 .card__meta a {
@@ -167,6 +193,7 @@ body {
     margin: 5px;
     text-align: center;
 }
+
 .small_preview h3 {
     font-size: xx-large;
     margin-left: 10px;
@@ -235,9 +262,10 @@ input[type="submit"].btn-contact:hover {
 }
 
 .content_cover {
-    max-height: 200px;
-    max-width: 100%;
-    margin: 1vw 0 0 0;
+    height: 200px;
+    width: 100%;
+    margin: 1vw auto 1vw auto;
+    padding: 0;
     /* object-fit: cover; */
 }
 
@@ -275,4 +303,21 @@ input[type="submit"].btn-contact:hover {
 .steam_ico img {
     max-height: 64px;
     max-width: 64px;
+}
+
+@media only screen and (max-width: 768px) {
+    .contact_form form {
+        margin: 2vw 0 2vw 0;
+        padding: 20px;
+    }
+
+    .contact_form form label {
+        font-weight: 600;
+        font-size: large;
+    }
+
+    .contact_form form input {
+        font-weight: 400;
+        font-size: large;
+    }
 }

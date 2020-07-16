@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block title %}Games{% endblock %}
 {% block content %}
   <div class="row section_title">
       <h1>Games list</h1>
   </div>
-  <div class="row row-sm-cols-1 row-cols-md-2">
+  <div class="row row-sm-cols-1 row-cols-md-2 content_wrapper">
     {% for game in games %}
-      <div class="col-sm-6 p-0 m-0">
+      <div class="col-sm-6">
         <div class="row game_preview">
           <div class="col col-4">
             {% if game.preview_picture %}
-              <img class="img-fluid" src="{{ game.preview_picture.url }}" alt="Game image preview">
+              <a href="{% url 'game_detail' game.id %}"><img class="img-fluid" src="{{ game.preview_picture.url }}" alt="Game image preview"></a>
             {% else %}
-              <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="No game image preview available">
+              <a href="{% url 'game_detail' game.id %}"><img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="No game image preview available"></a>
             {% endif %}
           </div>
           <div class="col col-8 left_border">

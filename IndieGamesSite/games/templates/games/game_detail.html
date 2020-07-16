@@ -1,59 +1,58 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block title %}{{ game.title }}{% endblock %}
 {% block content %}
-  <div class="row row-cols-1">
+  <div class="row row-cols-1 offset-1 m-0">
     {% if game %}
-      <div class="col col-12 content_cover">
+      <div class="col col-10 content_cover">
         {% if game.cover %}
           <img class="img-fluid" src="{{ game.cover.url }}" alt="...">
         {% else %}
           <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="...">
         {% endif %}
       </div>
-        <div class="col col-10 offset-1 content_detail"> 
-          <h1 class="row row-10">{{ game.title }}</h1>
-          <h4 class="row row-10">About</h4>
-          <h6 class="row row-10">
-            {% if game.about %}
-              {{ game.about }}
+      <div class="col col-10 offset-1 content_detail"> 
+        <h1 class="row row-10">{{ game.title }}</h1>
+        <h4 class="row row-10">About</h4>
+        <h6 class="row row-10">
+          {% if game.about %}
+            {{ game.about }}
+          {% else %}
+            No description aviabled
+          {% endif %}
+        </h6>
+        <hr>
+        <h4 class="row row-10">Tags</h4>
+        
+        <div class="row row-10 offset-1 pb-3">
+          {% if game.tags.all %}
+            {% for tag in game.tags.all %}
+            <h5 class="pl-2"><a href="{% url 'tagged_games' tag %}"><span class="col badge badge-dark">{{ tag }}</span></a></h5>
+            {% endfor %}
+          {% else %}
+            <h6 class="col"><small>No tags registered for this game</small></h6>
+          {% endif %}
+        </div>
+
+        <div class="row row-10">
+          <a class="steam_ico" href="{{ game.steam_link }}">
+            <img class="ico-home" src="{% static 'core/ico/steam.ico' %}" alt=""></img>
+          </a>
+        </div>
+        <hr>
+
+        <h4 class="row row-10 row-cols-1">Publisher</h4>
+        <div class="row row-cols-2 small_preview">
+          <div class="col col-4 col-md-5">
+            {% if game.publisher.profile_picture %}
+              <img class="img-fluid" src="{{ game.publisher.profile_picture.url }}" alt="...">
             {% else %}
-              No description aviabled
-            {% endif %}
-          </h6>
-          <hr>
-          <h4 class="row row-10">Tags</h4>
-          
-          <div class="row row-10 offset-1 pb-3">
-            {% if game.tags.all %}
-              {% for tag in game.tags.all %}
-              <h5 class="pl-2"><a href="{% url 'tagged_games' tag %}"><span class="col badge badge-dark">{{ tag }}</span></a></h5>
-              {% endfor %}
-            {% else %}
-              <h6 class="col"><small>No tags registered for this game</small></h6>
+              <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="...">
             {% endif %}
           </div>
-
-          <div class="row row-10">
-            <a class="steam_ico" href="{{ game.steam_link }}">
-              <img class="ico-home" src="{% static 'core/ico/steam.ico' %}" alt=""></img>
-            </a>
-          </div>
-          <hr>
-
-          <h4 class="row row-10 row-cols-1">Publisher</h4>
-          <div class="row row-cols-2 small_preview">
-            <div class="col col-4 col-md-5">
-              {% if game.publisher.profile_picture %}
-                <img class="img-fluid" src="{{ game.publisher.profile_picture.url }}" alt="...">
-              {% else %}
-                <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="...">
-              {% endif %}
-            </div>
-            <div class="col left_border">
-              <h3>{{ game.publisher.name }}</h3>
-              <a href="{% url 'publisher_detail' game.publisher.id %}">About</a>
-            </div>
+          <div class="col left_border">
+            <h3>{{ game.publisher.name }}</h3>
+            <a href="{% url 'publisher_detail' game.publisher.id %} target="_blank"">About</a>
           </div>
         </div>
       </div>
