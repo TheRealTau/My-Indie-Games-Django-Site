@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block title %}{{ game.title }}{% endblock %}
+{% block postUrl %}{% url 'game_detail' game.id %}{% endblock %}
+{% block postTitle %}{{ game.title }}{% endblock %}
+{% block postDescription %}{{ game.about }}{% endblock %}
+{% block postimage %}{{ game.cover.url }}{% endblock %
+
 {% block content %}
+
   <div class="row row-cols-1 offset-1 m-0">
     {% if game %}
       <div class="col col-10 content_cover">
