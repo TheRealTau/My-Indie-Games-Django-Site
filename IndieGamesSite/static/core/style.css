@@ -310,8 +310,61 @@ input[type="submit"].btn-contact:hover {
 }
 
 .steam_ico img {
-    max-height: 64px;
-    max-width: 64px;
+    max-height: 32px;
+    max-width: 32px;
+    top:-7px;
+    position: relative;
+}
+
+.tags_list {
+    margin-bottom: 1rem;
+    position: relative;
+    top:-7px;
+}
+
+.tags_list h5 {
+    margin-left: 10px;
+}
+
+.steam_ico {
+    top:-4px;
+    position: relative;
+}
+
+.share_links {
+    display: inline;
+}
+.share_links a{
+    text-decoration: none;
+}
+
+.fb-share-button{
+    position: relative;
+    top:-7px;
+}
+
+.error_content {
+    font-family: 'Aton';
+    text-align: center;
+    color: #333333;
+    font-size: 1.3em;
+    font-weight: 300;
+    margin: 3rem auto 3rem auto;
+    width: 85%;
+    max-width: 1400px;
+}
+
+.error_content h1 {
+    font-size: 3em;
+    font-weight: 400;
+    margin: 1rem auto 1rem auto;
+}
+
+.error_content a {
+    color: gold;
+    font-size: 3em;
+    font-weight: 400;
+    margin: 1rem auto 1rem auto;
 }
 
 @media only screen and (max-width: 768px) {
