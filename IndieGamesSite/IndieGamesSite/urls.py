@@ -27,6 +27,8 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
 ]
 
+handler404 = 'core.views.error_404_view'
+
 if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
