@@ -24,20 +24,22 @@
         <hr>
         <h4 class="row row-10">Tags</h4>
         
-        <div class="row row-10 offset-1 pb-3">
+        <div class="row row-10 offset-1 tags_list">
           {% if game.tags.all %}
             {% for tag in game.tags.all %}
-            <h5 class="pl-2"><a href="{% url 'tagged_games' tag %}"><span class="col badge badge-dark">{{ tag }}</span></a></h5>
+              <h5 class=""><a href="{% url 'tagged_games' tag %}"><span class="col badge badge-dark">{{ tag }}</span></a></h5>
             {% endfor %}
           {% else %}
             <h6 class="col"><small>No tags registered for this game</small></h6>
           {% endif %}
         </div>
 
-        <div class="row row-10">
+        <div class="row row-12 share_links">
           <a class="steam_ico" href="{{ game.steam_link }}" target="_blank">
             <img class="ico-home" src="{% static 'core/ico/steam.ico' %}" alt="Steam page link"></img>
           </a>
+          <div class="fb-share-button" data-href="{% url 'game_detail' game.id %}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Sharing this amazing game I found!!!" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <hr>
 

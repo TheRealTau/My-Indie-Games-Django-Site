@@ -310,8 +310,37 @@ input[type="submit"].btn-contact:hover {
 }
 
 .steam_ico img {
-    max-height: 64px;
-    max-width: 64px;
+    max-height: 32px;
+    max-width: 32px;
+    top:-7px;
+    position: relative;
+}
+
+.tags_list {
+    margin-bottom: 1rem;
+    position: relative;
+    top:-7px;
+}
+
+.tags_list h5 {
+    margin-left: 10px;
+}
+
+.steam_ico {
+    top:-4px;
+    position: relative;
+}
+
+.share_links {
+    display: inline;
+}
+.share_links a{
+    text-decoration: none;
+}
+
+.fb-share-button{
+    position: relative;
+    top:-7px;
 }
 
 .error_content {
