@@ -35,7 +35,7 @@
         </div>
 
         <div class="row row-10">
-          <a class="steam_ico" href="{{ game.steam_link }}">
+          <a class="steam_ico" href="{{ game.steam_link }}" target="_blank">
             <img class="ico-home" src="{% static 'core/ico/steam.ico' %}" alt=""></img>
           </a>
         </div>
@@ -52,7 +52,7 @@
           </div>
           <div class="col left_border">
             <h3>{{ game.publisher.name }}</h3>
-            <a href="{% url 'publisher_detail' game.publisher.id %} target="_blank"">About</a>
+            <a href="{% url 'publisher_detail' game.publisher.id %}">About</a>
           </div>
         </div>
       </div>
