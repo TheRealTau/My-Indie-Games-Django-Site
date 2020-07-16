@@ -314,6 +314,30 @@ input[type="submit"].btn-contact:hover {
     max-width: 64px;
 }
 
+.error_content {
+    font-family: 'Aton';
+    text-align: center;
+    color: #333333;
+    font-size: 1.3em;
+    font-weight: 300;
+    margin: 3rem auto 3rem auto;
+    width: 85%;
+    max-width: 1400px;
+}
+
+.error_content h1 {
+    font-size: 3em;
+    font-weight: 400;
+    margin: 1rem auto 1rem auto;
+}
+
+.error_content a {
+    color: gold;
+    font-size: 3em;
+    font-weight: 400;
+    margin: 1rem auto 1rem auto;
+}
+
 @media only screen and (max-width: 768px) {
     .contact_form form {
         margin: 2vw 0 2vw 0;
