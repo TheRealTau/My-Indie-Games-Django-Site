@@ -66,12 +66,17 @@ body {
     text-align: right;
 }
 
+.section_title {
+    width: 85%;
+    max-width: 1400px;
+}
+
 .section_title h1 {
+    margin: 2rem auto 2rem auto;
     font-family: 'Aton';
     font-size: 4em;
     font-weight: 400;
     text-align: center;
-    margin: 30px auto 30px auto;
 }
 
 .contact_content {
