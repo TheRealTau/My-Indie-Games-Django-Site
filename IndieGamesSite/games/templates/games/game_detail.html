@@ -6,9 +6,9 @@
     {% if game %}
       <div class="col col-10 content_cover">
         {% if game.cover %}
-          <img class="img-fluid" src="{{ game.cover.url }}" alt="...">
+          <img class="img-fluid" src="{{ game.cover.url }}" alt="Game cover image">
         {% else %}
-          <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="...">
+          <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="No cover iage for game available">
         {% endif %}
       </div>
       <div class="col col-10 offset-1 content_detail"> 
@@ -35,8 +35,8 @@
         </div>
 
         <div class="row row-10">
-          <a class="steam_ico" href="{{ game.steam_link }}">
-            <img class="ico-home" src="{% static 'core/ico/steam.ico' %}" alt=""></img>
+          <a class="steam_ico" href="{{ game.steam_link }}" target="_blank">
+            <img class="ico-home" src="{% static 'core/ico/steam.ico' %}" alt="Steam page link"></img>
           </a>
         </div>
         <hr>
@@ -45,14 +45,14 @@
         <div class="row row-cols-2 small_preview">
           <div class="col col-4 col-md-5">
             {% if game.publisher.profile_picture %}
-              <img class="img-fluid" src="{{ game.publisher.profile_picture.url }}" alt="...">
+              <img class="img-fluid" src="{{ game.publisher.profile_picture.url }}" alt="Publisher profile picture">
             {% else %}
-              <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="...">
+              <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="No image avilable for pubisher profile picture">
             {% endif %}
           </div>
           <div class="col left_border">
             <h3>{{ game.publisher.name }}</h3>
-            <a href="{% url 'publisher_detail' game.publisher.id %} target="_blank"">About</a>
+            <a href="{% url 'publisher_detail' game.publisher.id %}">About</a>
           </div>
         </div>
       </div>
