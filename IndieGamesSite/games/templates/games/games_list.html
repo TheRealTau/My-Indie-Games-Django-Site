@@ -3,7 +3,7 @@
 {% block title %}Games{% endblock %}
 {% block content %}
   <div class="row section_title">
-      <h1>Games list</h1>
+    <h1>Games list</h1>
   </div>
   <div class="row row-sm-cols-1 row-cols-md-2 content_wrapper">
     {% for game in games %}
@@ -31,20 +31,19 @@
     {% if is_paginated %}
       <div class="pagination_list">
         {% if page_obj.has_previous %}
-            <a class="" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+          <a class="" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
         {% else %}
-            <a class="disabled" href="#" tabindex="-1">&laquo;</a>
+          <a class="disabled" href="#" tabindex="-1">&laquo;</a>
         {% endif %}
         {% for i in paginator.page_range %}
-            <a class="{% if page_obj.number == i %}active{% endif %}" href="?page={{ i }}">{{ i }}</a>
+          <a class="{% if page_obj.number == i %}active{% endif %}" href="?page={{ i }}">{{ i }}</a>
         {% endfor %}
         {% if page_obj.has_next %}
-            <a class="" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+          <a class="" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
         {% else %}
-            <a class="disabled" href="#" tabindex="-1">&raquo;</a>
-            </li>
+          <a class="disabled" href="#" tabindex="-1">&raquo;</a>
         {% endif %}
-      </nav>
+      </div>
     {% endif %}
   </div>
 {% endblock %}
