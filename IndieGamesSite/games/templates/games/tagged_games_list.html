@@ -10,29 +10,25 @@
     </div>
     <div class="row row-cols-1 row-cols-md-2 pt-2">
       {% for game in games %}
-        <div class="col mb-4">
-          <div class="card card_preview card__meta">
-            <div class="row">
-              <div class="col-4 col-md-5">
-                {% if game.preview_picture %}
-                  <img src="{{ game.preview_picture.url }}" class="card-img" alt="...">
-                {% else %}
-                  <img src="{% static 'core/no_image.jpg' %}" class="card-img" alt="...">
-                {% endif %}
-              </div>
-              <div class="col-8 col-md-7">
-                <div class="card-body">
-                  <h4 class="card-title">{{ game.title }}</h4>
-                  <p class="card-text"><small class="text-muted">release date: {{ game.release_date }}</small>
-                    <br><small class="text-muted">Publisher: {{ game.publisher.name }}</small> 
-                  </p>
-                  <a href="{% url 'game_detail' game.id %}">About</a>
-                </div>
-              </div>
-            </div>
+      <div class="col-sm-6">
+        <div class="row game_preview">
+          <div class="col col-4">
+            {% if game.preview_picture %}
+              <a href="{% url 'game_detail' game.id %}"><img class="img-fluid" src="{{ game.preview_picture.url }}" alt="Game image preview"></a>
+            {% else %}
+              <a href="{% url 'game_detail' game.id %}"><img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="No game image preview available"></a>
+            {% endif %}
+          </div>
+          <div class="col col-8 left_border">
+            <h4>{{ game.title }}</h4>
+            <h6>Release date: {{ game.release_date }}</h6>
+            <h6>Publisher: {{ game.publisher.name }}</h6>
+            <br>
+            <a href="{% url 'game_detail' game.id %}">About</a>
           </div>
         </div>
-      {% endfor %}
+      </div>
+    {% endfor %}
     </div>
     <div class="row justify-content-center pt-2 pb-5">
       {% if is_paginated %}
