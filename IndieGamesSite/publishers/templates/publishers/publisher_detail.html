@@ -4,14 +4,14 @@
 {% block content %}
   <div class="row row-cols-1 offset-1 m-0">
     {% if publisher %}
-      <div class="col col-10 content_cover">
+      <div class="col content_cover">
         {% if publisher.cover %}
           <img class="img-fluid" src="{{ publisher.cover.url }}" alt="...">
         {% else %}
           <img class="img-fluid" src="{% static 'core/no_image.jpg' %}" alt="">
         {% endif %}
       </div>
-      <div class="col col-10 offset-1 content_detail">
+      <div class="col offset-1 content_detail">
         <h1 class="row">{{ publisher.name }}</h1>
         <h6 class="row">About this publisher</h6>
         <h6 class="row"></h6>
@@ -25,11 +25,11 @@
         <a class="row" href="{{ publisher.site_link }}" target="_blank">Official site</a>
         <hr>
         <h4 class="row">Games from this publisher</h4>          
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
           {% for game in publisher.game_set.all %}
             <div class="col">
               <div class="row row-cols-2 small_preview">
-                <div class="col col-4 col-md-5 b-0 m-0">
+                <div class="col col-4 col-md-5">
                   {% if game.preview_picture %}
                     <img class="img-fluid" src="{{ game.preview_picture.url }}" alt="...">
                   {% else %}
@@ -37,7 +37,7 @@
                   {% endif %}
                 </div>
                 <div class="col col-8 col-md-7 left_border">
-                  <h4>{{ game.title }}</h4>
+                  <h3>{{ game.title }}</h3>
                   <a href="{% url 'game_detail' game.id %}">About</a>
                 </div>
               </div>
