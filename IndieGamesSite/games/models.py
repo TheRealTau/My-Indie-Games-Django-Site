@@ -31,4 +31,4 @@ class Game(models.Model):
     preview_picture = models.ImageField(blank=True, verbose_name='Preview image', upload_to=partial(custom_game_upload, prefix='preview'))
     steam_link = models.URLField(blank=True, verbose_name='Link to steam page')
     tags = TaggableManager(verbose_name='Tags')
-    pub_date = models.DateField(auto_now=True, verbose_name="Published date")
+    created = models.DateField(auto_now_add=True, verbose_name="Published date", blank=True)
